@@ -1,40 +1,41 @@
 package io.github.jassonluiz.rest.webservices.restfulwebservices.filtering;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties("field1")
+//@JsonIgnoreProperties("field1")
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
 
 	private String field1;
 	
-	@JsonIgnore
-	private String fild2;
+	//@JsonIgnore
+	private String field2;
 	
-	private String fild3;
+	private String field3;
 
-	public SomeBean(String field1, String fild2, String fild3) {
+	public SomeBean(String field1, String field2, String field3) {
 		super();
 		this.field1 = field1;
-		this.fild2 = fild2;
-		this.fild3 = fild3;
+		this.field2 = field2;
+		this.field3 = field3;
 	}
 
 	public String getField1() {
 		return field1;
 	}
 
-	public String getFild2() {
-		return fild2;
+	public String getField2() {
+		return field2;
 	}
 
-	public String getFild3() {
-		return fild3;
+	public String getField3() {
+		return field3;
 	}
 
 	@Override
 	public String toString() {
-		return "SomeBean [field1=" + field1 + ", fild2=" + fild2 + ", fild3=" + fild3 + "]";
+		return "SomeBean [field1=" + field1 + ", fild2=" + field2 + ", fild3=" + field3 + "]";
 	}
 
 }
